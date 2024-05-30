@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProyectoFinal</string>
+
+    <string-array name="estado">
+        <item>Privado</item>
+        <item>Público</item>
+    </string-array>
+</resources>
