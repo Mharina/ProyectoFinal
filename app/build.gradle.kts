@@ -4,15 +4,15 @@ plugins {
     id("com.google.gms.google-services")
 }
 
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath("com.android.tools.build:gradle:7.2.1")
-    }
-}
+//buildscript {
+//    repositories {
+//        google()
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath("com.android.tools.build:gradle:7.2.1")
+//    }
+//}
 
 android {
     namespace = "com.example.proyectofinal"
