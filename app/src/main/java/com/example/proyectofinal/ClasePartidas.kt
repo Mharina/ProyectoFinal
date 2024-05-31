@@ -59,11 +59,10 @@
 package com.example.proyectofinal
 
 data class ClasePartidas(
-    var nombre: String = "",
-    var jugadores: ArrayList<String> = ArrayList(4),
     var descripcion: String = "",
     var estado: String = "",
-    var img: String = ""
-){
-    constructor() : this("", ArrayList(4), "", "", "")
-}
+    var img: String = "",
+    var jugadores: ArrayList<String> = ArrayList(3),
+    var nombre: String = "",
+    var master: String=""
+)

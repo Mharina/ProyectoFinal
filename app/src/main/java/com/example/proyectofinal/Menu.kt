@@ -163,7 +163,18 @@ class Menu : AppCompatActivity() {
                 partidaList.clear()
                 if (snapshot.exists()) {
                     for (snap in snapshot.children) {
+
+                        val nombre = snap.child("nombre").value.toString() as? String ?: ""
+                        val jugadores = snap.child("jugadores").children.map { it.value as String }
+                        val descripcion = snap.child("descripcion").value as? String ?: ""
+                        val estado = snap.child("estado").value as? String ?: ""
+                        val img = snap.child("img").value as? String ?: ""
+                        val master = snap.child("master").value as? String ?: ""
+
+                        Log.d("DirectAccess", "Nombre: $nombre, Jugadores: $jugadores, Descripción: $descripcion, Estado: $estado, Img: $img, Master: $master")
                         val data = snap.getValue(ClasePartidas::class.java)
+                        Log.d("Data",data.toString())
+
                         partidaList.add(data!!)
                     }
                     val adapterP = PartidasAdapter(partidaList)

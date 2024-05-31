@@ -24,7 +24,7 @@ class CrearPartidas : AppCompatActivity() {
 
         val db : DatabaseReference = FirebaseDatabase.getInstance().getReference("Partidas")
 
-        var array: ArrayList<String> = ArrayList(4)
+        var array: ArrayList<String> = ArrayList(3)
 
         val nombre: EditText = findViewById(R.id.editTextText48)
         val jugador: EditText = findViewById(R.id.editTextText49)
@@ -45,7 +45,7 @@ class CrearPartidas : AppCompatActivity() {
             startActivity(intent)
         }
         anadir.setOnClickListener {
-            if (array.size<4){
+            if (array.size<3){
                 array.add(jugador.text.toString())
                 jugador.text.clear()
             }else{
@@ -62,11 +62,12 @@ class CrearPartidas : AppCompatActivity() {
                 descripcion.setError("El campo descripcion es necesario")
             }
             val part = ClasePartidas(
-                nombre.text.toString(),
-                array,
                 descripcion.text.toString(),
                 est.selectedItem as String,
-                img.toString()
+                img.toString(),
+                array,
+                nombre.text.toString(),
+                email
             )
             val id = db.push().key!!
 
